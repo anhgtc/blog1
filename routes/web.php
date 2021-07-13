@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/contact', function(){
-    return view('contact.index');
-});
+Route::get('/contact/contacts/create', [ContactController::class, 'create']);
+Route::post('/contact/contacts/store', [ContactController::class, 'store']);
